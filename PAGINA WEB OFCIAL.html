@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comando Tarazona S.A.C - Seguridad y Licencias</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dark: #A07C30;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --gray: #888;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10,10,10,0.97);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 18px;
+  }
+
+  .nav-logo-text {
+    line-height: 1.1;
+  }
+
+  .nav-logo-text .brand {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .nav-logo-text .sub {
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-phone {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: #000;
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1.5px solid var(--white);
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(0,0,0,0.92) 45%, rgba(0,0,0,0.45) 100%),
+      url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 700px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow span { margin: 0 8px; }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 96px);
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 460px;
+    margin: 24px 0 36px;
+    font-weight: 400;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero-trust {
+    position: absolute;
+    bottom: 36px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    gap: 48px;
+    z-index: 2;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .trust-item i { color: var(--gold); font-size: 20px; }
+
+  .hero-watermark {
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+    z-index: 2;
+    text-align: right;
+  }
+
+  .hero-watermark .wm-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .hero-watermark .wm-text.visible {
+    color: rgba(255,255,255,0.55);
+    font-size: 36px;
+    letter-spacing: 8px;
+  }
+
+  .badge-years {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: var(--gold);
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 0 8px rgba(201,168,76,0.2);
+  }
+
+  .badge-years .mas { font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase; }
+  .badge-years .num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: #000; line-height: 1; }
+  .badge-years .anos { font-size: 9px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* SECTION COMMONS */
+  section { padding: 90px 80px; }
+
+  .section-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 60px;
+  }
+
+  /* SERVICES */
+  .services { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    text-align: center;
+    padding: 32px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    border-color: var(--gold);
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    color: var(--text-dark);
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .service-card:hover .service-icon { background: var(--gold); color: #000; }
+
+  .service-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+  }
+
+  .service-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .link-gold {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s;
+  }
+
+  .link-gold:hover { gap: 8px; }
+
+  /* STATS */
+  .stats-bar {
+    background: var(--dark);
+    padding: 50px 80px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-item i {
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+
+  /* AUDIENCE */
+  .audience { background: var(--white); }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .audience-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .audience-card:hover { transform: scale(1.02); }
+
+  .audience-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s;
+  }
+
+  .audience-card:hover .audience-card-bg { transform: scale(1.05); }
+
+  .audience-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .audience-card-content {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    z-index: 2;
+  }
+
+  .audience-card-content .icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: rgba(201,168,76,0.15);
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 20px;
+  }
+
+  .audience-card-content h3 {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .audience-card-content p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--light-gray); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
+  .stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; }
+
+  .testimonial-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  .author-name { font-weight: 700; font-size: 14px; color: var(--text-dark); }
+  .author-role { font-size: 12px; color: var(--text-muted); }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--dark);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&q=60') center/cover;
+    opacity: 0.08;
+  }
+
+  .cta-text { position: relative; z-index: 2; }
+
+  .cta-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .cta-text p { color: rgba(255,255,255,0.65); font-size: 14px; }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+
+  .btn-whatsapp:hover { background: #1fba57; }
+
+  .btn-call {
+    background: transparent;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-call:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* FOOTER */
+  footer {
+    background: #0A0A0A;
+    padding: 60px 80px 30px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 16px;
+    max-width: 240px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+
+  .footer-col h4 {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+
+  .footer-contact li i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  /* SCROLL ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 24px; }
+    .hero-content { padding: 0 24px; }
+    .hero-trust { left: 24px; right: 24px; gap: 20px; flex-wrap: wrap; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .audience-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; }
+    .cta-buttons { flex-wrap: wrap; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; padding: 0 24px; }
+    footer { padding: 60px 24px 30px; }
+    .stats-bar { padding: 50px 24px; }
+    .badge-years { display: none; }
+    .hero-watermark { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <i class="fas fa-shield-halved"></i>
+    </div>
+    <div class="nav-logo-text">
+      <div class="brand">Comando Tarazona S.A.C</div>
+      <div class="sub">Seguridad &amp; Licencias</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#sucamec">SUCAMEC</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:+51908538903" class="nav-phone">
+      <i class="fas fa-phone"></i> +51 908 538 903
+    </a>
+    <a href="#" class="btn-gold">Asesoría gratuita</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      Licencias <span>·</span> Formación <span>·</span> Oportunidades
+    </div>
+    <h1 class="hero-title">
+      TU SEGURIDAD.<br>
+      NUESTRO<br>
+      <span class="gold">COMPROMISO.</span>
+    </h1>
+    <p class="hero-desc">
+      Gestionamos tu licencia de armas, te preparamos para SUCAMEC, te formamos como guardia de seguridad y te conectamos con oportunidades laborales reales.
+    </p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-gold">Quiero mi licencia</a>
+      <a href="#servicios" class="btn-outline">Servicios para empresas</a>
+    </div>
+  </div>
+
+  <div class="hero-trust">
+    <div class="trust-item">
+      <i class="fas fa-user-shield"></i>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:12px;">Asesoría</div>
+        <div style="font-size:11px;">Personalizada</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <i class="fas fa-certificate"></i>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:12px;">Proceso 100%</div>
+        <div style="font-size:11px;">Legal y Seguro</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <i class="fas fa-handshake"></i>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:12px;">Acompañamiento</div>
+        <div style="font-size:11px;">Integral</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-watermark">
+    <div class="wm-text visible">COMANDO</div>
+    <div class="wm-text visible">TARAZONA</div>
+  </div>
+
+  <div class="badge-years">
+    <span class="mas">MÁS DE</span>
+    <span class="num">10</span>
+    <span class="anos">AÑOS<br>DE EXPERIENCIA</span>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="section-label">Nuestros Servicios</div>
+  <h2 class="section-title">Soluciones completas<br>para tu seguridad</h2>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon"><i class="fas fa-file-shield"></i></div>
+      <h3>Gestión de Licencia de Armas</h3>
+      <p>Nos encargamos de todo el proceso legal para que obtengas tu licencia de armas de manera rápida y segura.</p>
+      <a href="#" class="link-gold">Más información →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon"><i class="fas fa-crosshairs"></i></div>
+      <h3>Preparación para Examen SUCAMEC</h3>
+      <p>Te preparamos con materiales actualizados, simulacros y clases especializadas para que apruebes tu examen.</p>
+      <a href="#" class="link-gold">Más información →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.2s">
+      <div class="service-icon"><i class="fas fa-id-badge"></i></div>
+      <h3>Capacitación como Guardia de Seguridad</h3>
+      <p>Formación profesional con certificación válida para trabajar en empresas de seguridad privada.</p>
+      <a href="#" class="link-gold">Más información →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+      <h3>Bolsa de Trabajo en Vigilancia</h3>
+      <p>Te conectamos con empresas del sector y oportunidades laborales reales en todo el Perú.</p>
+      <a href="#" class="link-gold">Más información →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item fade-up">
+      <i class="fas fa-link"></i>
+      <div class="stat-num">+10</div>
+      <div class="stat-label">años de experiencia</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.1s">
+      <i class="fas fa-users"></i>
+      <div class="stat-num">+5,000</div>
+      <div class="stat-label">clientes satisfechos</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.2s">
+      <i class="fas fa-shield-halved"></i>
+      <div class="stat-num">+3,000</div>
+      <div class="stat-label">licencias gestionadas</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.3s">
+      <i class="fas fa-graduation-cap"></i>
+      <div class="stat-num">+1,500</div>
+      <div class="stat-label">egresados capacitados</div>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<section class="audience" id="nosotros">
+  <h2 class="section-title">¿A quién nos dirigimos?</h2>
+  <div class="audience-grid">
+    <div class="audience-card fade-up">
+      <div class="audience-card-bg" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80');"></div>
+      <div class="audience-card-overlay"></div>
+      <div class="audience-card-content">
+        <div class="icon-wrap"><i class="fas fa-user"></i></div>
+        <h3>Personas naturales</h3>
+        <p>Si buscas tu licencia de armas, prepararte para el examen SUCAMEC o formarte como guardia de seguridad, estamos contigo en cada paso.</p>
+        <a href="#" class="link-gold">Quiero mi licencia →</a>
+      </div>
+    </div>
+    <div class="audience-card fade-up" style="transition-delay:0.15s">
+      <div class="audience-card-bg" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80');"></div>
+      <div class="audience-card-overlay"></div>
+      <div class="audience-card-content">
+        <div class="icon-wrap"><i class="fas fa-building-shield"></i></div>
+        <h3>Empresas de seguridad</h3>
+        <p>Ofrecemos formación certificada y te ayudamos a encontrar personal calificado para tu empresa de seguridad.</p>
+        <a href="#" class="link-gold">Soy una empresa →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p>"Gracias a Comando Tarazona obtuve mi licencia sin complicaciones. El acompañamiento fue excelente desde el inicio hasta el final."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">CR</div>
+        <div>
+          <div class="author-name">Carlos R.</div>
+          <div class="author-role">Cliente - Licencia de Armas</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+      <div class="stars">★★★★★</div>
+      <p>"Las clases para el examen SUCAMEC fueron clave para aprobar a la primera. Profesionales y muy bien estructurado todo el contenido."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#2563eb;color:#fff;">MJ</div>
+        <div>
+          <div class="author-name">María J.</div>
+          <div class="author-role">Aprobó Examen SUCAMEC</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+      <div class="stars">★★★★★</div>
+      <p>"Encontramos personal capacitado y confiable gracias a su bolsa de trabajo. Un gran aliado para nuestra empresa."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#1a1a1a;color:#C9A84C;"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <div class="author-name">SegurMAX S.A.C.</div>
+          <div class="author-role">Empresa de Seguridad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="contacto">
+  <div class="cta-text">
+    <h2>¿LISTO PARA DAR<br>EL SIGUIENTE PASO?</h2>
+    <p>Contáctanos hoy y recibe asesoría gratuita.</p>
+  </div>
+  <div class="cta-buttons">
+    <a href="https://wa.me/51908538903" class="btn-whatsapp">
+      <i class="fab fa-whatsapp" style="font-size:18px;"></i> Escríbenos por WhatsApp
+    </a>
+    <a href="tel:+51908538903" class="btn-call">
+      <i class="fas fa-phone"></i> Llámanos ahora
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:18px;">
+          <i class="fas fa-shield-halved"></i>
+        </div>
+        <div>
+          <div style="color:#fff;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px;">Comando Tarazona S.A.C</div>
+          <div style="color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;">Seguridad &amp; Licencias</div>
+        </div>
+      </div>
+      <p>Somos una empresa peruana especializada en servicios de seguridad, licencias de armas, capacitación y colocación laboral en vigilancia.</p>
+      <div class="footer-social">
+        <a href="https://beacons.ai/comandotarazona" target="_blank" title="Todas nuestras redes"><i class="fas fa-link"></i></a>
+        <a href="https://beacons.ai/comandotarazona" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://beacons.ai/comandotarazona" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://beacons.ai/comandotarazona" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <a href="https://beacons.ai/comandotarazona" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--gold);font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(201,168,76,0.3);padding:7px 14px;border-radius:4px;transition:background 0.2s;" onmouseover="this.style.background='rgba(201,168,76,0.1)'" onmouseout="this.style.background='transparent'">
+        <i class="fas fa-globe"></i> Ver todas nuestras redes
+      </a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">SUCAMEC</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Licencia de Armas</a></li>
+        <li><a href="#">Examen SUCAMEC</a></li>
+        <li><a href="#">Capacitación</a></li>
+        <li><a href="#">SUCAMEC</a></li>
+        <li><a href="#">Bolsa de Trabajo</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Información</h4>
+      <ul>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="#">Requisitos</a></li>
+        <li><a href="#">Normativa</a></li>
+        <li><a href="#">Políticas de Privacidad</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul class="footer-contact">
+        <li><i class="fas fa-phone"></i><span>+51 908 538 903</span></li>
+        <li><i class="fas fa-envelope"></i><span>comandotarazonadelperu14@gmail.com</span></li>
+        <li><i class="fas fa-location-dot"></i><span>Urb. Las Casuarinas Mz I2 - Lte 17<br>Nuevo Chimbote, Perú</span></li>
+        <li><i class="fas fa-globe"></i><a href="https://beacons.ai/comandotarazona" target="_blank" style="color:var(--gold);text-decoration:none;">beacons.ai/comandotarazona</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 Comando Tarazona S.A.C. Todos los derechos reservados.</span>
+    <span>Diseñado con propósito, enfocado en tu seguridad.</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
